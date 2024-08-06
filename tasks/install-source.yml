@@ -137,7 +137,7 @@
     - keepalived-configure-directories
     - keepalived-configure-directories-create
 
-- include: service-upstart.yml
+- import_tasks: service-upstart.yml
   when: ansible_service_mgr != 'systemd'
   tags:
     - configuration
@@ -145,7 +145,7 @@
     - keepalived-service
     - keepalived-service-upstart
 
-- include: service-systemd.yml
+- import_tasks: service-systemd.yml
   when: ansible_service_mgr == 'systemd'
   tags:
     - configuration

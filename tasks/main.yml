@@ -27,11 +27,11 @@
     - keepalived-script-user
 
 - name: install from package manager
-  include: install-package.yml
+  import_tasks: install-package.yml
   when: keepalived_use_distro
 
 - name: install from source
-  include: install-source.yml
+  import_tasks: install-source.yml
   when: not keepalived_use_distro
 
 - name: update configuration file
